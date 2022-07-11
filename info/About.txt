@@ -1,6 +1,5 @@
-UDIVM (Unbound Definition-based Instructions Virtual Machine)
+Unbound Intermediary Language (UIL)
 
-A virtual machine that is based on redefinition of translation files.
 All code is run through a user-specified user translation file, allowing any hardware architecture to be targeted
 
 Translation Definition:
