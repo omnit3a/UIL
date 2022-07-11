@@ -1,0 +1,23 @@
+REGISTERS: eax ebx ecx edx END
+PUSH: push a$ END
+POP: pop r$ END
+ADD: add eax* ebx END
+SUB: sub eax* ebx END
+MUL: mul eax* ebx END
+DIV: div eax* ebx END
+MOD: div eax* ebx END
+COMPARE: cmp a$* a$ END
+IFEQ: je a$ END
+IFNE: jne a$ END
+IFGT: jg a$ END
+IFLT: jl a$ END
+MARKER: NEWLINE s$ END
+HOP: jmp a$ END
+AND: and r$* a$ END
+OR: or r$* a$ END
+NOT: not r$* a$ END
+XOR: xor r$* a$ END
+NOP: nop END
+SYSTEM: syscall END
+TRANSFER: mov a$* a$ END
+ALLOC: mov { a$ }* a$ END

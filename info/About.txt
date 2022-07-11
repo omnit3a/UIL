@@ -1,0 +1,47 @@
+UDIVM (Unbound Definition-based Instructions Virtual Machine)
+
+A virtual machine that is based on redefinition of translation files.
+All code is run through a user-specified user translation file, allowing any hardware architecture to be targeted
+
+Translation Definition:
+    END (Ends a translation definition)
+    FAILSAFE (Ends the interpreting process if reached)
+    NEWLINE (Adds a newline to a definition of an instruction)
+    REGISTERS (Make a list of all the system registers)
+    a$ (Introduce either a value or a register to a translation)
+    r$ (Introduce a register to a translation)
+        In code, the register is specified by it's index in the hashmap of registers. So if the hash map contained "eax", "ebx", "ecx"
+        then each register respectively would be accessed with "0r$", "1r$" and "$2r$"
+    v$ (Introduce a value to a translation)
+    s$ (Introduce a string to a translation)
+    All * are replaced with commas
+    All {/} are replaced with [/]
+    All (/) are replaced with {/}
+
+    Any of the registers on your machine may be accessed throughout a translation.
+
+    Currently, the only way to change the translation target file is in src/Translate.java @ line 36 by changing the filename of translationSource
+    
+VM Keywords:
+    PUSH (Standard: for stack pushes)
+    POP (Standard: for stack pops)
+    ADD (Standard: for Addition of top two stack elements)
+    SUB (Standard: for Subtraction of top two stack elements)
+    MUL (Standard: for Multiplication of top two stack elements)
+    DIV (Standard: for Division of top two stack elements)
+    MOD (Standard: for Modulus of top two stack elements)
+    COMPARE (Standard: for comparison of two registers)
+    IFEQ (Standard: Jump to marker if comparison yields EQUAL)
+    IFNE (Standard: Jump to marker if comparison yields NOT EQUAL)
+    IFGT (Standard: Jump to marker if comparison yields GREATER THAN)
+    IFLT (Standard: Jump to marker if comparison yields LESS THAN)
+    AND (Standard: for logical ANDing of top two stack elements)
+    OR (Standard: for logical ORing of top two stack elements)
+    NOT (Standard: for logical NOTing of top two stack elements)
+    XOR (Standard: for logical XORing of top two stack elements)
+    NOP (Standard: for No operation)
+    MARKER (Standard: for label definition)
+    HOP (Standard: for unconditional jump)
+    SYSTEM (Standard: System call)
+    TRANSFER (Standard: Move data from operand to operand)
+    ALLOC (Standard: Allocate a byte in system memory)

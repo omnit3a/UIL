@@ -1,0 +1,9 @@
+MARKER Start:
+PUSH 10
+POP 0r$
+PUSH 10
+POP 0r$
+COMPARE 0r$ 1r$
+TRANSFER 255 0r$
+ALLOC 2r$ 3r$
+
